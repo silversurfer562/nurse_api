@@ -55,6 +55,4 @@ async def health_check():
 
 if __name__ == "__main__":
     # Use values from config for local development run
-    uvicorn.run(
-        "app.main:app", host=config.HOST, port=config.PORT, reload=True
-    )
+    uvicorn.run("app.main:app", host=config.HOST, port=config.PORT, reload=True)
