@@ -1,0 +1,24 @@
+# Environment variables for Nurse's AI Assistant API
+
+# App metadata
+VERSION=0.1.0
+SERVICE_NAME=nurse-ai-api
+
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Server Configuration
+HOST=0.0.0.0
+PORT=8000
+
+# CORS origins (comma-separated). Use "*" for allow all (dev only)
+CORS_ORIGINS=* 
+
+# Database Configuration (when using databases)
+DATABASE_URL=sqlite:///./nurse_api.db
+
+# Logging Configuration
+LOG_LEVEL=INFO
+
+# Security
+SECRET_KEY=your_secret_key_here
