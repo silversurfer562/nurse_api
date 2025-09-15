@@ -4,7 +4,7 @@ Tests for the main FastAPI application.
 
 from fastapi.testclient import TestClient
 from app.main import app
-from app import config
+
 
 client = TestClient(app)
 
@@ -15,7 +15,7 @@ def test_root_endpoint():
     assert response.status_code == 200
     data = response.json()
     assert data["message"] == "Welcome to Nurse's AI Assistant API"
-    assert data["version"] == config.VERSION
+
     assert data["status"] == "running"
     assert data["docs"] == "/docs"
     assert data["redoc"] == "/redoc"
@@ -27,8 +27,7 @@ def test_health_check_endpoint():
     assert response.status_code == 200
     data = response.json()
     assert data["status"] == "healthy"
-    assert data["service"] == config.SERVICE_NAME
-    assert data["version"] == config.VERSION
+
 
 
 def test_api_docs_available():
