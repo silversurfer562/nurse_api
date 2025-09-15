@@ -6,6 +6,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
+from app.routers import deepstudy
+
 # Initialize FastAPI app
 app = FastAPI(
     title="Nurse's AI Assistant API",
@@ -24,6 +26,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(deepstudy.router)
 
 
 @app.get("/")
